@@ -19,6 +19,40 @@
 	<div class="square" id="square3" ></div>
 
 	<script type="text/javascript" src="./script.js">
+		const square1 = document.getElementById('square1');
+		const square2 = document.getElementById('square2');
+		const square3 = document.getElementById('square3');
+
+		function changeColors(activeSquare) {
+	    const squares = [square1, square2, square3];
+  
+	    squares.forEach(square => {
+         if (square !== activeSquare) {
+	      square.style.backgroundColor = '#6F4E37'; // Coffee color
+		 } 
+		 
+		 else {
+		      square.style.backgroundColor = '#E6E6FA'; // Lavender color
+		}
+	  });
+	}
+
+			square1.addEventListener('mouseover', function() {
+			changeColors(square1);
+	});
+			square2.addEventListener('mouseover', function() {
+			changeColors(square2);
+	});
+			square3.addEventListener('mouseover', function() {
+			changeColors(square3);
+	});
+
+		
+			squares.forEach(square => {
+			square.addEventListener('mouseleave', function() {
+		    changeColors(null);
+	});
+  });
 	</script>
 </body>
 </html>
